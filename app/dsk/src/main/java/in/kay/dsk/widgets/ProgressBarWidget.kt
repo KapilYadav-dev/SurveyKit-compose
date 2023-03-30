@@ -49,7 +49,7 @@ fun ProgressBarWidget(
 data class ProgressBarWidgetConfig(
     val progressColor: String = colorBlue.toHex(),
     val bgColor: String = colorLightBlue.toHex(),
-    val widgetDimens: WidgetDimens = WidgetDimens(
+    override val widgetDimens: WidgetDimens = WidgetDimens(
         fillWidth = true,
         fillHeight = null,
         height = 12,

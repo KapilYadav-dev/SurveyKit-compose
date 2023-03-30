@@ -18,7 +18,7 @@ data class TextWidgetConfig(
     val text: String? = null,
     val textConfig: TextConfig = TextConfig(),
     val modifier: Modifier = Modifier,
-    val widgetDimens: WidgetDimens = WidgetDimens(
+    override val widgetDimens: WidgetDimens = WidgetDimens(
         fillWidth = null,
         fillHeight = null,
         height = null,

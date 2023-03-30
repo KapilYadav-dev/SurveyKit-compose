@@ -23,7 +23,7 @@ data class ButtonWidgetConfig(
     val borderStroke: Int = 0,
     val borderColor: String = colorWhite.toHex(),
     val modifier: Modifier = Modifier,
-    val widgetDimens: WidgetDimens = WidgetDimens(
+    override val widgetDimens: WidgetDimens = WidgetDimens(
         fillWidth = null,
         fillHeight = null,
         height = null,

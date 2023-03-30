@@ -83,7 +83,7 @@ data class EditTextWidgetConfig(
     val borderColor: String = colorBlack.toHex(),
     val borderStroke: Int = 2,
     val textColor: String = "#000000",
-    val widgetDimens: WidgetDimens = WidgetDimens(
+    override val widgetDimens: WidgetDimens = WidgetDimens(
         fillWidth = null,
         fillHeight = null,
         height = null,

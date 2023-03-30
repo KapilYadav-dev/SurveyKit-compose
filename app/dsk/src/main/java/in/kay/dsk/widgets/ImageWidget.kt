@@ -16,7 +16,7 @@ data class ImageWidgetConfig(
     val borderRadius:Int = 20,
     val borderStroke:Int = 2,
     val imageUrl:String?=null,
-    val widgetDimens: WidgetDimens = WidgetDimens(
+    override val widgetDimens: WidgetDimens = WidgetDimens(
         fillWidth = null,
         fillHeight = null,
         height = null,

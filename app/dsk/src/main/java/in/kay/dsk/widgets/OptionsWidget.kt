@@ -12,7 +12,9 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import `in`.kay.dsk.models.WidgetConfig
+import `in`.kay.dsk.models.WidgetDimens
 import `in`.kay.dsk.utils.Utils.setButton
+import `in`.kay.dsk.utils.Utils.setWidgetDimens
 import `in`.kay.dsk.utils.Utils.toDp
 
 @Composable
@@ -31,8 +33,7 @@ fun OptionsWidget(config: OptionsWidgetConfig, selectedOptionsList: (List<String
     config.apply {
         LazyColumn(
             Modifier
-                .fillMaxWidth()
-                .height(340.dp)
+                .setWidgetDimens(widgetDimens)
                 .padding(
                     startPadding.toDp(),
                     topPadding.toDp(),
@@ -112,4 +113,8 @@ data class OptionsWidgetConfig(
     override val bottomPadding: Int = 0,
     override val startPadding: Int = 0,
     override val endPadding: Int = 0,
+    override val widgetDimens: WidgetDimens = WidgetDimens(
+        true,
+        null, null, 320
+    ),
 ) : WidgetConfig

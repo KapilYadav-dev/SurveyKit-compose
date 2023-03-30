@@ -7,6 +7,7 @@ interface WidgetConfig {
     val bottomPadding:Int
     val startPadding:Int
     val endPadding:Int
+    val widgetDimens:WidgetDimens
 }
 
 data class WidgetDimens(
