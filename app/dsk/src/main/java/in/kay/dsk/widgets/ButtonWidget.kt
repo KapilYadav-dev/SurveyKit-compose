@@ -22,13 +22,14 @@ data class ButtonWidgetConfig(
     val bgColor: String = colorBlue.toHex(),
     val borderRadius: Int = 12,
     val borderStroke: Int = 0,
-    val borderColor:String = colorWhite.toHex(),
+    val borderColor: String = colorWhite.toHex(),
     val modifier: Modifier = Modifier,
     val btnText: TextWidgetConfig = TextWidgetConfig(
         text = "next", textConfig = TextConfig(
             colorWhite.toHex(), 16, "bold"
         ),
-        modifier = Modifier.padding(vertical = 8.dp)
+        topPadding = 8,
+        bottomPadding = 8
     ),
     override val widgetId: String = Widgets.CtaButtonWidgetId.widgetName,
     override val topPadding: Int = 0,

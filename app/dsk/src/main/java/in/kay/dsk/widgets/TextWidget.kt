@@ -5,6 +5,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import `in`.kay.dsk.models.TextConfig
 import `in`.kay.dsk.models.WidgetConfig
+import `in`.kay.dsk.models.WidgetDimens
 import `in`.kay.dsk.utils.Utils.applyText
 
 @Composable
@@ -14,9 +15,15 @@ fun TextWidget(config: TextWidgetConfig = TextWidgetConfig()) {
 }
 
 data class TextWidgetConfig(
-    val text:String?=null,
+    val text: String? = null,
     val textConfig: TextConfig = TextConfig(),
-    val modifier: Modifier=Modifier,
+    val modifier: Modifier = Modifier,
+    val widgetDimens: WidgetDimens = WidgetDimens(
+        fillWidth = null,
+        fillHeight = null,
+        height = null,
+        width = null
+    ),
     override val widgetId: String = Widgets.TextWidgetId.widgetName,
     override val topPadding: Int = 0,
     override val bottomPadding: Int = 0,

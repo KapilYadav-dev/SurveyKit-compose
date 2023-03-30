@@ -11,6 +11,7 @@ import androidx.compose.ui.unit.dp
 import `in`.kay.dsk.SurveyKit
 import `in`.kay.dsk.models.TextConfig
 import `in`.kay.dsk.models.WidgetConfig
+import `in`.kay.dsk.models.WidgetDimens
 import `in`.kay.dsk.theme.colorBlue
 import `in`.kay.dsk.theme.colorUnSelectedArea
 import `in`.kay.dsk.theme.colorUnSelectedText
@@ -38,7 +39,7 @@ class MainActivity : ComponentActivity() {
         list1.add(
             TextWidgetConfig(
                 "In the above image, please tell what it is in less than 500 words?",
-                modifier = Modifier.fillMaxWidth(),
+                widgetDimens = WidgetDimens(true),
                 startPadding = 24,
                 endPadding = 24,
                 topPadding = 18
@@ -57,9 +58,8 @@ class MainActivity : ComponentActivity() {
                         text = "", textConfig = TextConfig(
                             colorUnSelectedText.toHex(), 16, "semiBold"
                         ),
-                        modifier = Modifier
-                            .padding(vertical = 12.dp, horizontal = 4.dp)
-                            .fillMaxWidth()
+                        modifier = Modifier.padding(vertical = 12.dp, horizontal = 4.dp),
+                        widgetDimens = WidgetDimens(true)
                     ),
                     bgColor = colorUnSelectedArea.toHex()
                 ),
@@ -69,12 +69,12 @@ class MainActivity : ComponentActivity() {
                     topPadding = 22,
                     modifier = Modifier.fillMaxWidth(),
                     btnText = TextWidgetConfig(
-                        text = "", textConfig = TextConfig(
+                        text = "",
+                        textConfig = TextConfig(
                             colorBlue.toHex(), 16, "semiBold"
                         ),
-                        modifier = Modifier
-                            .padding(vertical = 12.dp, horizontal = 4.dp)
-                            .fillMaxWidth()
+                        modifier = Modifier.padding(vertical = 12.dp, horizontal = 4.dp),
+                        widgetDimens = WidgetDimens(true)
                     ),
                     bgColor = colorWhite.toHex(),
                     borderStroke = 4,
@@ -110,10 +110,9 @@ class MainActivity : ComponentActivity() {
         list2.add(
             TextWidgetConfig(
                 "Showing 'app' on Xiaomi 2201117PI.\n" + "Install successfully finished in 142 ms.?",
-                modifier = Modifier.fillMaxWidth(),
                 startPadding = 24,
                 endPadding = 24,
-                topPadding = 56
+                topPadding = 56, widgetDimens = WidgetDimens(true)
             )
         )
         list2.add(
@@ -142,7 +141,7 @@ class MainActivity : ComponentActivity() {
                         ),
                         modifier = Modifier
                             .padding(vertical = 12.dp, horizontal = 4.dp)
-                            .fillMaxWidth()
+                        , widgetDimens = WidgetDimens(true)
                     ),
                     bgColor = colorUnSelectedArea.toHex()
                 ),
@@ -157,7 +156,7 @@ class MainActivity : ComponentActivity() {
                         ),
                         modifier = Modifier
                             .padding(vertical = 12.dp, horizontal = 4.dp)
-                            .fillMaxWidth()
+                        , widgetDimens = WidgetDimens(true)
                     ),
                     bgColor = colorWhite.toHex(),
                     borderStroke = 4,
@@ -181,10 +180,10 @@ class MainActivity : ComponentActivity() {
         list3.add(
             TextWidgetConfig(
                 "In the above image, please tell what it is in less than 500 words?",
-                modifier = Modifier.fillMaxWidth(),
                 startPadding = 24,
                 endPadding = 24,
                 topPadding = 18
+                , widgetDimens = WidgetDimens(true)
             )
         )
         list3.add(
@@ -202,7 +201,7 @@ class MainActivity : ComponentActivity() {
                         ),
                         modifier = Modifier
                             .padding(vertical = 12.dp, horizontal = 4.dp)
-                            .fillMaxWidth()
+                        , widgetDimens = WidgetDimens(true)
                     ),
                     bgColor = colorUnSelectedArea.toHex()
                 ),
@@ -217,7 +216,7 @@ class MainActivity : ComponentActivity() {
                         ),
                         modifier = Modifier
                             .padding(vertical = 12.dp, horizontal = 4.dp)
-                            .fillMaxWidth()
+                        , widgetDimens = WidgetDimens(true)
                     ),
                     bgColor = colorWhite.toHex(),
                     borderStroke = 4,

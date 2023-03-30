@@ -9,3 +9,12 @@ interface WidgetConfig {
     val endPadding:Int
 }
 
+data class WidgetDimens(
+    val fillWidth:Boolean?,
+    val fillHeight:Boolean?,
+    val width : Int?,
+    val height : Int?,
+) {
+    constructor(fillWidth: Boolean?) : this(fillWidth,null,null,null)
+
+}
