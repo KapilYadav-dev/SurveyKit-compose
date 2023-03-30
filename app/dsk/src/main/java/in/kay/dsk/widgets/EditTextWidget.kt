@@ -18,10 +18,12 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import `in`.kay.dsk.models.TextConfig
 import `in`.kay.dsk.models.WidgetConfig
+import `in`.kay.dsk.models.WidgetDimens
 import `in`.kay.dsk.theme.colorBlack
 import `in`.kay.dsk.theme.colorUnSelected
 import `in`.kay.dsk.theme.colorUnSelectedText
 import `in`.kay.dsk.utils.Utils.applyText
+import `in`.kay.dsk.utils.Utils.setWidgetDimens
 import `in`.kay.dsk.utils.Utils.toColor
 import `in`.kay.dsk.utils.Utils.toDp
 import `in`.kay.dsk.utils.Utils.toHex
@@ -54,6 +56,7 @@ fun EditTextWidget(
                     }
                 }
             }, modifier = modifier
+                .setWidgetDimens(widgetDimens = widgetDimens)
                 .padding(
                     startPadding.toDp(), topPadding.toDp(), endPadding.toDp(), bottomPadding.toDp()
                 )
@@ -80,6 +83,12 @@ data class EditTextWidgetConfig(
     val borderColor: String = colorBlack.toHex(),
     val borderStroke: Int = 2,
     val textColor: String = "#000000",
+    val widgetDimens: WidgetDimens = WidgetDimens(
+        fillWidth = null,
+        fillHeight = null,
+        height = null,
+        width = null
+    ),
     val hintTextConfig: TextWidgetConfig = TextWidgetConfig(
         text = "enter your answer here...", textConfig = TextConfig(
             colorUnSelectedText.toHex(), 16, "light"

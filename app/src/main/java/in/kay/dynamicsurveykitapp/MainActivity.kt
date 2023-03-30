@@ -84,9 +84,7 @@ class MainActivity : ComponentActivity() {
         )
         list1.add(
             EditTextWidgetConfig(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .height(240.dp), startPadding = 24, endPadding = 24, topPadding = 23
+               widgetDimens = WidgetDimens(true, fillHeight = false, width = null, height = 300), startPadding = 24, endPadding = 24, topPadding = 23
             )
         )
         list1.add(
