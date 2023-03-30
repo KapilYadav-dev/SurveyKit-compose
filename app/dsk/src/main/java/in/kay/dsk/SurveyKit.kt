@@ -10,13 +10,16 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import `in`.kay.dsk.models.WidgetConfig
 import `in`.kay.dsk.theme.colorWhite
+import `in`.kay.dsk.utils.Utils.toast
 import `in`.kay.dsk.widgets.*
 
 
 @Composable
 fun SurveyKit(widgetList: MutableList<List<WidgetConfig>>) {
+    val context = LocalContext.current
     // currIdx is an Int representing the index of the current question in a survey.
     var currIdx by rememberSaveable {
         mutableStateOf(0)
@@ -64,7 +67,7 @@ fun SurveyKit(widgetList: MutableList<List<WidgetConfig>>) {
                     if (currIdx != widgetList.size - 1) currIdx++
                 }
                 Widgets.OptionsWidgetId.widgetName -> OptionsWidget(config = widget as OptionsWidgetConfig) {
-
+                    it.toString().toast(context)
                 }
             }
         }

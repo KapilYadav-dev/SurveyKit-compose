@@ -1,6 +1,7 @@
 package `in`.kay.dsk.utils
 
 import android.content.Context
+import android.util.Log
 import android.widget.Toast
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.*
@@ -123,6 +124,10 @@ object Utils {
 
     fun String.toast(context: Context) {
         Toast.makeText(context, this, Toast.LENGTH_LONG).show()
+    }
+
+    fun Any.log(TAG:String="app-unique-tag") {
+        Log.d(TAG, "Data is $this")
     }
 
     fun String.toColor(): Color {

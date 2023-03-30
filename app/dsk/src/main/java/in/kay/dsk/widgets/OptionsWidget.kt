@@ -16,25 +16,15 @@ import `in`.kay.dsk.utils.Utils.setButton
 import `in`.kay.dsk.utils.Utils.toDp
 
 @Composable
-fun OptionsWidget(config: OptionsWidgetConfig, selectedOptionsList:(List<String>)->Unit) {
+fun OptionsWidget(config: OptionsWidgetConfig, selectedOptionsList: (List<String>) -> Unit) {
     // This is used to save the selected non selected items
     val optionsPairList = remember {
-        mutableStateListOf<Pair<String,Boolean>>()
+        mutableStateListOf<Pair<String, Boolean>>()
     }
-    val selectedOption = mutableListOf<String>()
+    val localSelectedOptionList = mutableListOf<String>()
     // This is the var used to store last selectedIndex in case of single selection
     var currentSelectedIndex: Int? = null
-    LaunchedEffect(key1 = optionsPairList, block = {
-        optionsPairList.forEach {
-            if(it.second) {
-                selectedOption.add(it.first)
-            }
-        }
-        if(selectedOption.isNotEmpty()) {
-            selectedOptionsList(selectedOption)
-            selectedOption.clear()
-        }
-    })
+
     config.optionsList.forEach {
         optionsPairList.add(Pair(it, false))
     }
@@ -60,15 +50,25 @@ fun OptionsWidget(config: OptionsWidgetConfig, selectedOptionsList:(List<String>
                     // Call setButton on the new configuration object
                     newSelectedButtonConfig.setButton {
                         // If multiple selection is allowed, unselect the current option
-                        if(multipleSelection) {
+                        if (multipleSelection) {
                             optionsPairList[idx] = Pair(optionsPairList[idx].first, false)
+                            optionsPairList.forEach {
+                                if (it.second) {
+                                    localSelectedOptionList.add(it.first)
+                                }
+                            }
+                            if (localSelectedOptionList.isNotEmpty()) {
+                                selectedOptionsList(localSelectedOptionList)
+                                localSelectedOptionList.clear()
+                            }
                         }
                     }
                 } else {
                     // The current option is not selected
                     // Build a new button configuration with the unSelectedButtonConfig and set the text to the current option
                     val newTextConfig = unSelectedButtonConfig.btnText.copy(text = pair.first)
-                    val newUnSelectedButtonConfig = unSelectedButtonConfig.copy(btnText = newTextConfig)
+                    val newUnSelectedButtonConfig =
+                        unSelectedButtonConfig.copy(btnText = newTextConfig)
                     // Call setButton on the new configuration object
                     newUnSelectedButtonConfig.setButton {
                         // If multiple selection is not allowed and there is a previously selected option, unselect it
@@ -77,12 +77,23 @@ fun OptionsWidget(config: OptionsWidgetConfig, selectedOptionsList:(List<String>
                         // Select the current option and update the currentSelectedIndex
                         optionsPairList[idx] = Pair(pair.first, true)
                         currentSelectedIndex = idx
+
+                        optionsPairList.forEach {
+                            if (it.second) {
+                                localSelectedOptionList.add(it.first)
+                            }
+                        }
+                        if (localSelectedOptionList.isNotEmpty()) {
+                            selectedOptionsList(localSelectedOptionList)
+                            localSelectedOptionList.clear()
+                        }
                     }
                 }
             }
         }
     }
 }
+
 /*
 The OptionsWidgetConfig is a data class that holds configuration options for building the widget. It has the following properties:
  */
@@ -94,11 +105,11 @@ data class OptionsWidgetConfig(
     // unSelectedButtonConfig: a ButtonWidgetConfig representing the configuration for the unselected state of the button.
     val unSelectedButtonConfig: ButtonWidgetConfig,
     // multipleSelection: a Boolean indicating whether multiple options can be selected at once.
-    val multipleSelection : Boolean,
+    val multipleSelection: Boolean,
     //widgetId, topPadding, bottomPadding, startPadding, and endPadding are optional parameters that are used for styling the widget.
     override val widgetId: String = Widgets.OptionsWidgetId.widgetName,
     override val topPadding: Int = 0,
     override val bottomPadding: Int = 0,
     override val startPadding: Int = 0,
-    override val endPadding: Int = 0
+    override val endPadding: Int = 0,
 ) : WidgetConfig
