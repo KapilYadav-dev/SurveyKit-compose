@@ -58,6 +58,7 @@ object Utils {
             contentDescription = null,
             contentScale = ContentScale.Crop,
             modifier = modifier
+                .setWidgetDimens(widgetDimens)
                 .padding(
                     startPadding.toDp(), topPadding.toDp(), endPadding.toDp(), bottomPadding.toDp()
                 )

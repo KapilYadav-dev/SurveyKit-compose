@@ -18,7 +18,7 @@ fun CurrentQuestionWidget(
     totalQuestion:Int,
 ) {
     config.apply {
-        Column() {
+        Column {
             Row(
                 Modifier
                     .fillMaxWidth()

@@ -3,8 +3,6 @@ package `in`.kay.dynamicsurveykitapp
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
@@ -33,7 +31,6 @@ class MainActivity : ComponentActivity() {
         val widgetList = mutableListOf<List<WidgetConfig>>()
         val list1 = mutableListOf<WidgetConfig>()
         val list2 = mutableListOf<WidgetConfig>()
-        val list3 = mutableListOf<WidgetConfig>()
         list1.add(CurrentQuestionWidgetWidgetConfig())
         list1.add(ProgressBarWidgetConfig())
         list1.add(
@@ -116,9 +113,7 @@ class MainActivity : ComponentActivity() {
         list2.add(
             ImageWidgetConfig(
                 imageUrl = "https://images.unsplash.com/photo-1574169208507-84376144848b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=879&q=80",
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .height(240.dp),
+                widgetDimens = WidgetDimens(true, fillHeight = false, width = null, height = 500),
                 startPadding = 24,
                 endPadding = 24,
                 topPadding = 24

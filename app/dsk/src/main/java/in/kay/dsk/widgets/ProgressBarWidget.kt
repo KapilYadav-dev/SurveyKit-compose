@@ -13,8 +13,10 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import `in`.kay.dsk.models.WidgetConfig
+import `in`.kay.dsk.models.WidgetDimens
 import `in`.kay.dsk.theme.colorBlue
 import `in`.kay.dsk.theme.colorLightBlue
+import `in`.kay.dsk.utils.Utils.setWidgetDimens
 import `in`.kay.dsk.utils.Utils.toColor
 import `in`.kay.dsk.utils.Utils.toDp
 import `in`.kay.dsk.utils.Utils.toHex
@@ -34,8 +36,7 @@ fun ProgressBarWidget(
         LinearProgressIndicator(
             progress = animatedProgress, modifier = Modifier
                 .padding(startPadding.toDp(), topPadding.toDp(), endPadding.toDp(), bottomPadding.toDp())
-                .height(12.dp)
-                .fillMaxWidth()
+                .setWidgetDimens(widgetDimens)
                 .clip(
                     RoundedCornerShape(12.dp)
                 ),
@@ -48,6 +49,12 @@ fun ProgressBarWidget(
 data class ProgressBarWidgetConfig(
     val progressColor: String = colorBlue.toHex(),
     val bgColor: String = colorLightBlue.toHex(),
+    val widgetDimens: WidgetDimens = WidgetDimens(
+        fillWidth = true,
+        fillHeight = null,
+        height = 12,
+        width = null
+    ),
     override val widgetId: String = Widgets.ProgressBarWidgetId.widgetName,
     override val topPadding: Int = 22,
     override val bottomPadding: Int = 0,
