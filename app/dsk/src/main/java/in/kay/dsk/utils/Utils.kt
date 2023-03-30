@@ -75,6 +75,7 @@ object Utils {
         Button(
             onClick = { onCtaClick() },
             modifier = modifier
+                .setWidgetDimens(widgetDimens)
                 .padding(
                     startPadding.toDp(), topPadding.toDp(), endPadding.toDp(), bottomPadding.toDp()
                 )

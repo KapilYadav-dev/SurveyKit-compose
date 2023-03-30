@@ -1,12 +1,11 @@
 package `in`.kay.dsk.widgets
 
-import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.dp
 import `in`.kay.dsk.models.TextConfig
 import `in`.kay.dsk.models.WidgetConfig
+import `in`.kay.dsk.models.WidgetDimens
 import `in`.kay.dsk.theme.colorBlue
 import `in`.kay.dsk.theme.colorWhite
 import `in`.kay.dsk.utils.Utils.setButton
@@ -24,6 +23,12 @@ data class ButtonWidgetConfig(
     val borderStroke: Int = 0,
     val borderColor: String = colorWhite.toHex(),
     val modifier: Modifier = Modifier,
+    val widgetDimens: WidgetDimens = WidgetDimens(
+        fillWidth = null,
+        fillHeight = null,
+        height = null,
+        width = null
+    ),
     val btnText: TextWidgetConfig = TextWidgetConfig(
         text = "next", textConfig = TextConfig(
             colorWhite.toHex(), 16, "bold"
