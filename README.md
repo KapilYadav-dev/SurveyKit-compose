@@ -295,3 +295,233 @@ fun SurveyKit(widgetList: MutableList<List<WidgetConfig>>) {
     }
 }
 ```
+### Json to UI example
+![WhatsApp Image 2023-04-01 at 10 36 15 PM](https://user-images.githubusercontent.com/69911517/229304706-5620a5ca-2b70-4596-88cc-fc4998c91837.jpeg)
+
+```json
+[
+  {
+    "bottomPadding": 0,
+    "endPadding": 16,
+    "prefixText": "Question",
+    "primaryTextConfig": {
+      "color": "#000000",
+      "fontSize": 20,
+      "fontWeight": "bold"
+    },
+    "secondaryTextConfig": {
+      "color": "#000000",
+      "fontSize": 16,
+      "fontWeight": "light"
+    },
+    "startPadding": 16,
+    "topPadding": 16,
+    "widgetDimens": {
+      "fillHeight": null,
+      "fillWidth": true,
+      "height": null,
+      "width": null
+    },
+    "widgetId": "cqWidget"
+  },
+  {
+    "bgColor": "#EAF2FD",
+    "bottomPadding": 0,
+    "endPadding": 20,
+    "progressColor": "#2F80ED",
+    "startPadding": 20,
+    "topPadding": 22,
+    "widgetDimens": {
+      "fillHeight": null,
+      "fillWidth": true,
+      "height": 12,
+      "width": null
+    },
+    "widgetId": "pbWidget"
+  },
+  {
+    "bottomPadding": 0,
+    "endPadding": 24,
+    "startPadding": 24,
+    "text": "In the above image, please tell what it is in less than 500 words?",
+    "textConfig": {
+      "color": "#000000",
+      "fontSize": 20,
+      "fontWeight": "bold"
+    },
+    "topPadding": 18,
+    "widgetDimens": {
+      "fillHeight": null,
+      "fillWidth": true,
+      "height": null,
+      "width": null
+    },
+    "widgetId": "textWidget"
+  },
+  {
+    "bottomPadding": 0,
+    "endPadding": 0,
+    "multipleSelection": true,
+    "optionsList": [
+      "Option 1",
+      "Option 2",
+      "Option 3",
+      "Option 4"
+    ],
+    "selectedButtonConfig": {
+      "bgColor": "#FFFFFF",
+      "borderColor": "#2F80ED",
+      "borderRadius": 12,
+      "borderStroke": 4,
+      "bottomPadding": 0,
+      "btnText": {
+        "bottomPadding": 0,
+        "endPadding": 0,
+        "startPadding": 0,
+        "text": "",
+        "textConfig": {
+          "color": "#2F80ED",
+          "fontSize": 16,
+          "fontWeight": "semiBold"
+        },
+        "topPadding": 0,
+        "widgetDimens": {
+          "fillHeight": null,
+          "fillWidth": true,
+          "height": null,
+          "width": null
+        },
+        "widgetId": "textWidget"
+      },
+      "endPadding": 24,
+      "startPadding": 24,
+      "topPadding": 22,
+      "widgetDimens": {
+        "fillHeight": null,
+        "fillWidth": true,
+        "height": null,
+        "width": null
+      },
+      "widgetId": "ctaButtonWidget"
+    },
+    "startPadding": 0,
+    "topPadding": 0,
+    "unSelectedButtonConfig": {
+      "bgColor": "#D9D9D9",
+      "borderColor": "#FFFFFF",
+      "borderRadius": 12,
+      "borderStroke": 0,
+      "bottomPadding": 0,
+      "btnText": {
+        "bottomPadding": 0,
+        "endPadding": 0,
+        "startPadding": 0,
+        "text": "",
+        "textConfig": {
+          "color": "#000000",
+          "fontSize": 16,
+          "fontWeight": "semiBold"
+        },
+        "topPadding": 0,
+        "widgetDimens": {
+          "fillHeight": null,
+          "fillWidth": true,
+          "height": null,
+          "width": null
+        },
+        "widgetId": "textWidget"
+      },
+      "endPadding": 24,
+      "startPadding": 24,
+      "topPadding": 22,
+      "widgetDimens": {
+        "fillHeight": null,
+        "fillWidth": true,
+        "height": null,
+        "width": null
+      },
+      "widgetId": "ctaButtonWidget"
+    },
+    "widgetDimens": {
+      "fillHeight": null,
+      "fillWidth": true,
+      "height": 320,
+      "width": null
+    },
+    "widgetId": "optionsWidget"
+  },
+  {
+    "bgColor": "#FFFFFF",
+    "borderColor": "#000000",
+    "borderRadius": 16,
+    "borderStroke": 2,
+    "bottomPadding": 0,
+    "endPadding": 24,
+    "hintTextConfig": {
+      "bottomPadding": 0,
+      "endPadding": 0,
+      "startPadding": 0,
+      "text": "enter your answer here...",
+      "textConfig": {
+        "color": "#000000",
+        "fontSize": 16,
+        "fontWeight": "light"
+      },
+      "topPadding": 0,
+      "widgetDimens": {
+        "fillHeight": null,
+        "fillWidth": null,
+        "height": null,
+        "width": null
+      },
+      "widgetId": "textWidget"
+    },
+    "startPadding": 24,
+    "textColor": "#000000",
+    "topPadding": 23,
+    "widgetDimens": {
+      "fillHeight": false,
+      "fillWidth": true,
+      "height": 300,
+      "width": null
+    },
+    "widgetId": "etWidget"
+  },
+  {
+    "bgColor": "#2F80ED",
+    "borderColor": "#FFFFFF",
+    "borderRadius": 12,
+    "borderStroke": 0,
+    "bottomPadding": 32,
+    "btnText": {
+      "bottomPadding": 0,
+      "endPadding": 0,
+      "startPadding": 0,
+      "text": "Next",
+      "textConfig": {
+        "color": "#FFFFFF",
+        "fontSize": 16,
+        "fontWeight": "semiBold"
+      },
+      "topPadding": 0,
+      "widgetDimens": {
+        "fillHeight": null,
+        "fillWidth": null,
+        "height": null,
+        "width": null
+      },
+      "widgetId": "textWidget"
+    },
+    "endPadding": 24,
+    "startPadding": 24,
+    "topPadding": 48,
+    "widgetDimens": {
+      "fillHeight": null,
+      "fillWidth": true,
+      "height": null,
+      "width": null
+    },
+    "widgetId": "ctaButtonWidget"
+  }
+]
+```
