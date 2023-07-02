@@ -43,10 +43,12 @@ interface WidgetConfig {
 }
 
 data class WidgetDimens(
-    val fillWidth:Boolean?, // If this is given our widget fill cover parent
-    val fillHeight:Boolean?,
-    val width : Int?, // specifying the widget width
-    val height : Int?,
+    // if you want to cover full dimen then use "match_parent" else "wrap_content" or specify dimen in int
+    val width : Any?, // specifying the widget width
+    val height : Any?,
+    // eg
+    // width = "match_parent"
+    // height = 40
 )
 ```
 
@@ -72,9 +74,7 @@ val config = TextWidgetConfig(
             fontWeight = "semiBold"
         ),
         widgetDimens = WidgetDimens(
-            true,
-            null,
-            null,
+            "match_parent",
             100
         )
     )
@@ -91,9 +91,7 @@ val config = TextWidgetConfig(
         progressColor = colorBlue.toHex(),
         bgColor = Color.LightGray.toHex(),
         widgetDimens = WidgetDimens(
-            true,
-            null,
-            null,
+            "match_parent",
             14
         ),
         topPadding = 100,
@@ -125,9 +123,7 @@ val config = TextWidgetConfig(
         startPadding = 24,
         endPadding = 24,
         widgetDimens = WidgetDimens(
-            fillWidth=true,
-            fillHeight = null,
-            width = null,
+            width = "match_parent",
             height = 100
         )
     )
@@ -144,7 +140,7 @@ val config = TextWidgetConfig(
 
 ```kotlin
     val config = EditTextWidgetConfig(
-        widgetDimens = WidgetDimens(true, fillHeight = false, width = null, height = 300),
+        widgetDimens = WidgetDimens(width = "match_parent", height = 300),
         startPadding = 24,
         endPadding = 24,
         topPadding = 100,
@@ -163,7 +159,7 @@ val config = TextWidgetConfig(
 
 ```kotlin
     val config = ImageWidgetConfig(
-        widgetDimens = WidgetDimens(true, fillHeight = false, width = null, height = 300),
+        widgetDimens = WidgetDimens(width = "match_parent", height = 300),
         startPadding = 24,
         endPadding = 24,
         topPadding = 10,
@@ -222,7 +218,7 @@ val config = TextWidgetConfig(
             borderStroke = 4,
             borderColor = colorBlue.toHex()
         ),
-        widgetDimens = WidgetDimens(true, fillHeight = false, width = null, height = 400),
+        widgetDimens = WidgetDimens(width = "match_parent", height = 400),
         startPadding = 24,
         endPadding = 24,
         topPadding = 10,
@@ -317,10 +313,8 @@ fun SurveyKit(widgetList: MutableList<List<WidgetConfig>>) {
     "startPadding": 16,
     "topPadding": 16,
     "widgetDimens": {
-      "fillHeight": null,
-      "fillWidth": true,
       "height": null,
-      "width": null
+      "width": "match_parent"
     },
     "widgetId": "cqWidget"
   },
@@ -332,10 +326,8 @@ fun SurveyKit(widgetList: MutableList<List<WidgetConfig>>) {
     "startPadding": 20,
     "topPadding": 22,
     "widgetDimens": {
-      "fillHeight": null,
-      "fillWidth": true,
       "height": 12,
-      "width": null
+      "width": "match_parent"
     },
     "widgetId": "pbWidget"
   },
@@ -351,10 +343,8 @@ fun SurveyKit(widgetList: MutableList<List<WidgetConfig>>) {
     },
     "topPadding": 18,
     "widgetDimens": {
-      "fillHeight": null,
-      "fillWidth": true,
       "height": null,
-      "width": null
+      "width": "match_parent"
     },
     "widgetId": "textWidget"
   },
@@ -386,10 +376,8 @@ fun SurveyKit(widgetList: MutableList<List<WidgetConfig>>) {
         },
         "topPadding": 0,
         "widgetDimens": {
-          "fillHeight": null,
-          "fillWidth": true,
           "height": null,
-          "width": null
+          "width": "match_parent"
         },
         "widgetId": "textWidget"
       },
@@ -397,11 +385,9 @@ fun SurveyKit(widgetList: MutableList<List<WidgetConfig>>) {
       "startPadding": 24,
       "topPadding": 22,
       "widgetDimens": {
-        "fillHeight": null,
-        "fillWidth": true,
-        "height": null,
-        "width": null
-      },
+          "height": null,
+          "width": "match_parent"
+        },
       "widgetId": "ctaButtonWidget"
     },
     "startPadding": 0,
@@ -423,11 +409,9 @@ fun SurveyKit(widgetList: MutableList<List<WidgetConfig>>) {
           "fontWeight": "semiBold"
         },
         "topPadding": 0,
-        "widgetDimens": {
-          "fillHeight": null,
-          "fillWidth": true,
+       "widgetDimens": {
           "height": null,
-          "width": null
+          "width": "match_parent"
         },
         "widgetId": "textWidget"
       },
@@ -435,19 +419,15 @@ fun SurveyKit(widgetList: MutableList<List<WidgetConfig>>) {
       "startPadding": 24,
       "topPadding": 22,
       "widgetDimens": {
-        "fillHeight": null,
-        "fillWidth": true,
-        "height": null,
-        "width": null
-      },
+          "height": null,
+          "width": "match_parent"
+        },
       "widgetId": "ctaButtonWidget"
     },
     "widgetDimens": {
-      "fillHeight": null,
-      "fillWidth": true,
-      "height": 320,
-      "width": null
-    },
+          "height": 320,
+          "width": "match_parent"
+        },
     "widgetId": "optionsWidget"
   },
   {
@@ -469,22 +449,18 @@ fun SurveyKit(widgetList: MutableList<List<WidgetConfig>>) {
       },
       "topPadding": 0,
       "widgetDimens": {
-        "fillHeight": null,
-        "fillWidth": null,
-        "height": null,
-        "width": null
-      },
+          "height": null,
+          "width": null
+        },
       "widgetId": "textWidget"
     },
     "startPadding": 24,
     "textColor": "#000000",
     "topPadding": 23,
     "widgetDimens": {
-      "fillHeight": false,
-      "fillWidth": true,
-      "height": 300,
-      "width": null
-    },
+          "height": 300,
+          "width": "match_parent"
+        },
     "widgetId": "etWidget"
   },
   {
@@ -505,22 +481,18 @@ fun SurveyKit(widgetList: MutableList<List<WidgetConfig>>) {
       },
       "topPadding": 0,
       "widgetDimens": {
-        "fillHeight": null,
-        "fillWidth": null,
-        "height": null,
-        "width": null
-      },
+          "height": null,
+          "width": null
+        },
       "widgetId": "textWidget"
     },
     "endPadding": 24,
     "startPadding": 24,
     "topPadding": 48,
     "widgetDimens": {
-      "fillHeight": null,
-      "fillWidth": true,
-      "height": null,
-      "width": null
-    },
+          "height": null,
+          "width": "match_parent"
+        },
     "widgetId": "ctaButtonWidget"
   }
 ]
