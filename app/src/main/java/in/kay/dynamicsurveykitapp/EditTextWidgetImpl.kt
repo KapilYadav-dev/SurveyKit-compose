@@ -13,7 +13,7 @@ import `in`.kay.dsk.widgets.EditTextWidgetConfig
 @Preview
 fun EditTextWidgetImpl() {
     val config = EditTextWidgetConfig(
-        widgetDimens = WidgetDimens(true, fillHeight = false, width = null, height = 300),
+        widgetDimens = WidgetDimens("match_parent", height = 300),
         startPadding = 24,
         endPadding = 24,
         topPadding = 100,

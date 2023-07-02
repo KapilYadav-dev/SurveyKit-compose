@@ -17,9 +17,7 @@ fun ProgressBarWidgetImpl() {
         progressColor = colorBlue.toHex(),
         bgColor = Color.LightGray.toHex(),
         widgetDimens = WidgetDimens(
-            true,
-            null,
-            null,
+            "match_parent",
             14
         ),
         topPadding = 100,

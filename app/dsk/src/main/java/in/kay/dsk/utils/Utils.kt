@@ -101,15 +101,15 @@ object Utils {
         then(
             run {
                 when {
-                    widgetDimens.fillWidth == true -> fillMaxWidth()
-                    widgetDimens.width != null -> width(widgetDimens.width.toDp())
+                    widgetDimens.width == "match_parent" -> fillMaxWidth()
+                    widgetDimens.width != null && widgetDimens.width is Int -> width(widgetDimens.width.toDp())
                     else -> wrapContentWidth()
                 }
             }).then(
             run {
                 when {
-                    widgetDimens.fillHeight == true -> fillMaxHeight()
-                    widgetDimens.height != null -> height(widgetDimens.height.toDp())
+                    widgetDimens.height == "match_parent" -> fillMaxHeight()
+                    widgetDimens.height != null && widgetDimens.height is Int -> height(widgetDimens.height.toDp())
                     else -> wrapContentHeight()
                 }
             }

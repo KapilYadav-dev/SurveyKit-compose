@@ -11,11 +11,8 @@ interface WidgetConfig {
 }
 
 data class WidgetDimens(
-    val fillWidth:Boolean?,
-    val fillHeight:Boolean?,
-    val width : Int?,
-    val height : Int?,
+    val width : Any?,
+    val height : Any?,
 ) {
-    constructor(fillWidth: Boolean?) : this(fillWidth,null,null,null)
-
+    constructor(fillWidth: Boolean?=true,fillHeight:Boolean?=false) : this(if(fillWidth==true) "match_parent" else "wrap_content",null)
 }

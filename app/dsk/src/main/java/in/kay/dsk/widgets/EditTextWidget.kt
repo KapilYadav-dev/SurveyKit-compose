@@ -84,8 +84,6 @@ data class EditTextWidgetConfig(
     val borderStroke: Int = 2,
     val textColor: String = "#000000",
     override val widgetDimens: WidgetDimens = WidgetDimens(
-        fillWidth = null,
-        fillHeight = null,
         height = null,
         width = null
     ),

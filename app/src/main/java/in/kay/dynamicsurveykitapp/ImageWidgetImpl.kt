@@ -12,7 +12,7 @@ import `in`.kay.dsk.widgets.ImageWidgetConfig
 @Preview
 fun ImageWidgetImpl() {
     val config = ImageWidgetConfig(
-        widgetDimens = WidgetDimens(true, fillHeight = false, width = null, height = 300),
+        widgetDimens = WidgetDimens("match_parent", height = 300),
         startPadding = 24,
         endPadding = 24,
         topPadding = 10,

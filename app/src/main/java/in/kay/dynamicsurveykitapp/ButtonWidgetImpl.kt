@@ -31,9 +31,7 @@ fun ButtonWidgetImpl() {
         startPadding = 24,
         endPadding = 24,
         widgetDimens = WidgetDimens(
-            true,
-            null,
-            null,
+            "match_parent",
             100
         )
     )

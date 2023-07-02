@@ -56,7 +56,7 @@ fun OptionsWidgetImpl() {
             borderStroke = 4,
             borderColor = colorBlue.toHex()
         ),
-        widgetDimens = WidgetDimens(true, fillHeight = false, width = null, height = 400),
+        widgetDimens = WidgetDimens("match_parent", height = 400),
         startPadding = 24,
         endPadding = 24,
         topPadding = 10,

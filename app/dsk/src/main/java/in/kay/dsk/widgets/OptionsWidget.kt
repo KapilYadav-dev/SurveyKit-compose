@@ -114,7 +114,6 @@ data class OptionsWidgetConfig(
     override val startPadding: Int = 0,
     override val endPadding: Int = 0,
     override val widgetDimens: WidgetDimens = WidgetDimens(
-        true,
-        null, null, 320
+        true, 320
     ),
 ) : WidgetConfig

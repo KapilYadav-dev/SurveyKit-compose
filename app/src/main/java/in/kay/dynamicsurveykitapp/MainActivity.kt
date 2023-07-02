@@ -81,7 +81,7 @@ class MainActivity : ComponentActivity() {
         )
         list1.add(
             EditTextWidgetConfig(
-               widgetDimens = WidgetDimens(true, fillHeight = false, width = null, height = 300), startPadding = 24, endPadding = 24, topPadding = 23
+               widgetDimens = WidgetDimens("match_parent", height = 300), startPadding = 24, endPadding = 24, topPadding = 23
             )
         )
         list1.add(
@@ -113,7 +113,7 @@ class MainActivity : ComponentActivity() {
         list2.add(
             ImageWidgetConfig(
                 imageUrl = "https://images.unsplash.com/photo-1574169208507-84376144848b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=879&q=80",
-                widgetDimens = WidgetDimens(true, fillHeight = false, width = null, height = 500),
+                widgetDimens = WidgetDimens("match_parent", height = 500),
                 startPadding = 24,
                 endPadding = 24,
                 topPadding = 24

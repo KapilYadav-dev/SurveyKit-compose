@@ -50,10 +50,8 @@ data class ProgressBarWidgetConfig(
     val progressColor: String = colorBlue.toHex(),
     val bgColor: String = colorLightBlue.toHex(),
     override val widgetDimens: WidgetDimens = WidgetDimens(
-        fillWidth = true,
-        fillHeight = null,
         height = 12,
-        width = null
+        width = "match_parent"
     ),
     override val widgetId: String = Widgets.ProgressBarWidgetId.widgetName,
     override val topPadding: Int = 22,

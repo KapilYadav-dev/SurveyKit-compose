@@ -22,9 +22,7 @@ fun TextWidgetImpl() {
             fontWeight = "semiBold"
         ),
         widgetDimens = WidgetDimens(
-            true,
-            null,
-            null,
+            "match_parent",
             100
         )
     )
